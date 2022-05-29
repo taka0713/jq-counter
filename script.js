@@ -1,30 +1,28 @@
 $(function(){
+
     $('#plus').click(function(){
-        let count = Number($('#count').val());
-        count = count + 1;
-        $('#count').val(count);
-        if (10 <= count) {
-            $('#count').val(10);
-         }
-    })
+        let count = Number($('#count').val()) + 1;
+        if(count <= 10){
+            $('#count').val(count);
+        }
+    });
 
     $('#minus').click(function(){
-        let count = Number($('#count').val());
-        count = count - 1;
+        let count = Number($('#count').val()) - 1;
         $('#count').val(count);
-        if (count <= 0) {
+        if(count <= 0){
             $('#count').val(0);
-         }
-    })
+        }
+    });
 
-    $('#reset').click(function(){
+    $('#reset').click(function(){ 
         $('#count').val(0);
-        
-    })
+    });
 
-    $('#times').click(function(){
-        let count = Number($('#count').val());
-        $('#count').val(count * 2);
-        
-    })
+    $('#times').click(function(){ 
+        let count = Number($('#count').val()) * 2;
+        if(count <= 10){
+            $('#count').val(count);
+        }
+    });
 });
